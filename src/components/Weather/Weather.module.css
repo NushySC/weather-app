@@ -1,0 +1,13 @@
+.outputs {
+    display: flex;
+    flex-direction: column;
+}
+
+.outputTitle {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+}
+
+.outputResult {
+    font-family: 'Aleo', serif;
+}

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import Form from './components/Form/Form'
-import Title from './components/Title/Title'
+import Header from './components/Header/Header'
 import Weather from './components/Weather/Weather'
 
 const API_KEY = '61586687420c6c03218d0ae312e69085'
@@ -16,7 +16,7 @@ class App extends Component {
     country: undefined,
     humidity: undefined,
     description: undefined,
-    //wind: undefined,
+    wind: undefined,
     error: undefined,
   }
 
@@ -24,7 +24,7 @@ class App extends Component {
     e.preventDefault();
     const city = e.target.elements.city.value;
     const api_call = await
-      fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${API_KEY}`);
+      fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${API_KEY}`);
     const data = await api_call.json();
     //console.log(data)
     if (city) {
@@ -34,7 +34,7 @@ class App extends Component {
         country: data.sys.country,
         description: data.weather[0].description,
         humidity: data.main.humidity,
-        //wind: data.wind,
+        wind: data.wind.speed,
         error: "",  
       })
     }else {
@@ -45,7 +45,7 @@ class App extends Component {
   render() {
   return (
     <div className="App">
-    <Title />
+    <Header />
     <Form
       getWeather={this.getWeather} />
     <Weather 
@@ -54,7 +54,7 @@ class App extends Component {
       country={this.state.country}
       description={this.state.description}
       humidity={this.state.humidity}
-      //wind={this.state.wind}
+      wind={this.state.wind}
       error={this.state.error}
       />  
       

@@ -1,0 +1,36 @@
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+button {
+    margin: 1em;
+    border-radius: 0.6em;
+    background-color: orchid;
+    padding: 0.8em 0.2em;
+    width: 10em;
+    color: white;
+}
+
+input {
+  border-style: none;
+  border-bottom: 0.2em solid grey;
+  padding: 0.3em;
+  width: 60vw;
+
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active  {
+    -webkit-box-shadow: 0 0 0 30px #f1eee7 inset !important;
+    font-family: 'Raleway', serif;
+}
+
+input, select, textarea {
+  background-color: #f1eee7;
+  outline: none;
+  font-family: 'Raleway', serif;
+}

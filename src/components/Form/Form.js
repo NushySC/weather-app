@@ -1,14 +1,12 @@
-import React, { Component } from 'react'
+import React from 'react'
+import Styles from './Form.module.scss'
 
-class Form extends Component {
-    render() {
-        return (
-            <form onSubmit={this.props.getWeather}>
-                <input type="text" name="city" placeholder="Enter your city" />
-                <button>Get the forecast!</button>
+const Form = (props) => (
+            <form onSubmit={props.getWeather}>
+                <input className={Styles.inputBox}type="text" name="city" placeholder="Enter your city" />
+                <br />
+                <button> Get the forecast!</button>
       </form>
         )
-    }
-}
 
 export default Form 

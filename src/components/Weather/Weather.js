@@ -1,19 +1,16 @@
-import React, { Component } from 'react'
+import React from 'react'
+import Styles from "./Weather.module.css"
 
-class Weather extends Component {
-    render() {
-        return (
-            <div>
-                {this.props.city && this.props.country && <h2>{this.props.city}, {this.props.country}</h2>}
-                {this.props.temperature && <p>Temperature: {this.props.temperature}</p>}     
-                {this.props.humidity && <p>Humidity: {this.props.humidity}</p>}
-     
-                <p>{this.props.description}</p>
+
+
+const Weather = props => (
+            <div className={Styles.outputs}>
+                {props.city && props.country && <h2 className={Styles.outputTitle}>{props.city}, {props.country}</h2>}
+                {props.temperature && <p className={Styles.outputTitle}>Temperature: <span className={Styles.outputResult}>{props.temperature}°C</span> </p>}     
+                {props.humidity && <p className={Styles.outputTitle}>Humidity: <span className={Styles.outputResult}>{props.humidity}%</span></p>}
+                {props.wind && <p className={Styles.outputTitle}>Wind: <span className={Styles.outputResult}>{props.wind} meters/sec</span></p>}
+                <p className={Styles.outputResult}>{props.description}</p>
                 
-
             </div>
-        )
-    }
-}
-
+)
 export default Weather
