@@ -1,26 +1,66 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
 import './App.css';
 
-function App() {
+import Form from './components/Form/Form'
+import Title from './components/Title/Title'
+import Weather from './components/Weather/Weather'
+
+const API_KEY = '61586687420c6c03218d0ae312e69085'
+
+
+class App extends Component {
+
+  state = {
+    temperature: undefined,
+    city: undefined,
+    country: undefined,
+    humidity: undefined,
+    description: undefined,
+    //wind: undefined,
+    error: undefined,
+  }
+
+  getWeather = async (e) => {
+    e.preventDefault();
+    const city = e.target.elements.city.value;
+    const api_call = await
+      fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${API_KEY}`);
+    const data = await api_call.json();
+    //console.log(data)
+    if (city) {
+      this.setState({
+        temperature: data.main.temp,
+        city: data.name,
+        country: data.sys.country,
+        description: data.weather[0].description,
+        humidity: data.main.humidity,
+        //wind: data.wind,
+        error: "",  
+      })
+    }else {
+      alert("Please, enter a city")
+    }
+  }
+
+  render() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Title />
+    <Form
+      getWeather={this.getWeather} />
+    <Weather 
+      temperature={this.state.temperature}
+      city={this.state.city}
+      country={this.state.country}
+      description={this.state.description}
+      humidity={this.state.humidity}
+      //wind={this.state.wind}
+      error={this.state.error}
+      />  
+      
+  </div>
   );
+  }
 }
 
 export default App;
