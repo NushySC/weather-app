@@ -4,8 +4,10 @@
 
 .title {
     font-size: 3em;
+    margin: 0.2em;
 }
 
 .subtitle {
-    font-size: 2em;
+    font-size: 1.3em;
+    margin: 0.3em;
 }

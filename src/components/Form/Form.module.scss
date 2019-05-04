@@ -7,18 +7,20 @@ form {
 button {
     margin: 1em;
     border-radius: 0.6em;
-    background-color: orchid;
+    background-color: rgb(65, 81, 228);
     padding: 0.8em 0.2em;
     width: 10em;
     color: white;
+    border-style: none;
+    box-shadow: 0.3em 0.3em 0.6em #2927275b;
 }
 
 input {
   border-style: none;
-  border-bottom: 0.2em solid grey;
+  border-bottom: 0.2em solid white;
   padding: 0.3em;
-  width: 60vw;
-
+  width: 30vw;
+  color: white;
 }
 
 input:-webkit-autofill,
@@ -30,7 +32,11 @@ input:-webkit-autofill:active  {
 }
 
 input, select, textarea {
-  background-color: #f1eee7;
+  background-color: #f1eee700;
   outline: none;
   font-family: 'Raleway', serif;
+}
+
+::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+  color:    white;
 }
