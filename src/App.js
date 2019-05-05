@@ -133,7 +133,7 @@ class App extends Component {
         bgColorClass = 'haze'; 
       }  
       else {
-          bgColorClass = 'white'
+          bgColorClass = 'main'
       }
 
     return (
