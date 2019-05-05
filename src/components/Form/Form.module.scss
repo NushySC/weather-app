@@ -9,7 +9,7 @@ form {
 button {
     margin: 1em;
     border-radius: 0.6em;
-    background-color: #8c8c8f;
+    background-color: #4d4d4d;
     padding: 0.8em 0.2em;
     width: 10em;
     color: white;
@@ -17,6 +17,11 @@ button {
     font-weight: 700;
     border-style: none;
     box-shadow: 0.3em 0.3em 0.6em #2927275b;
+
+    &:hover {
+      background-color: #ffffff;
+      color: #5c5b5b;
+    }
 }
 
 input {

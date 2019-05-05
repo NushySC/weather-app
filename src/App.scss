@@ -7,6 +7,7 @@ $snow: #707ba5;
 $clouds: #686b77;
 $haze: #842343;
 
+$mainTitle: 'Arvo', serif;
 $title: 'Heebo', sans-serif;
 $text: 'Roboto', sans-serif;
 
@@ -31,11 +32,12 @@ $text: 'Roboto', sans-serif;
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  padding: 3em;
   @include gradient($sun, $drizzle, vertical);
   //background-color: $drizzle;
   //background: linear-gradient(0deg, rgb(66, 61, 160) 0%, rgba(0,212,255,1) 100%);
   color: white;
-  height: 100vh;
+  min-height: 100vh;
 
   &.sun{ @include gradient($sun, #f57106, vertical); }
   &.rain { @include gradient($rain, #147e11, vertical); }
@@ -50,6 +52,6 @@ $text: 'Roboto', sans-serif;
 
 @media only screen and (max-width: 600px) {
   .App {
-    font-size: calc(0.5em + 1vmin);;
+    font-size: calc(0.4em + 1vmin);;
   }
 }

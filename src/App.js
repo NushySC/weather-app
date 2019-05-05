@@ -28,22 +28,25 @@ class App extends Component {
     tomorrow: undefined,
     afterTomorrow: undefined,
     afterAfterTomorrow: undefined,
+    tomorrowIcon:undefined,
+    afterTomorrowIcon: undefined,
+    afterAfterTomorrowIcon:undefined,
   }
 
   getWeather = async (e) => {
     e.preventDefault();
     const city = e.target.elements.city.value;
  
-    const fetchText = url => fetch(url).then(r => r.json()); 
+    //const fetchText = url => fetch(url).then(r => r.json()); 
  
     const [weather, forecast] = await Promise.all([
-      fetchText(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${API_KEY}`),
-      fetchText(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&APPID=${API_KEY}`)
+      axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${API_KEY}`),
+      axios.get(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&APPID=${API_KEY}`)
       
     ]);
  
-    //console.log(weather)
-    //console.log(forecast)
+    console.log(weather)
+    console.log(forecast)
 
 
     let today = new Date()
@@ -58,28 +61,31 @@ class App extends Component {
     afterTomorrow.getDay()
 
     let afterAfterTomorrow = new Date();
-    afterAfterTomorrow.setDate(today.getDate()+2);
+    afterAfterTomorrow.setDate(today.getDate()+3);
     afterAfterTomorrow.getDay()
 
 
     if (city) {
       this.setState({
-        temperature: weather.main.temp,
-        city: weather.name,
-        country: weather.sys.country,
-        description: weather.weather[0].description,
-        main: weather.weather[0].main,
-        humidity: weather.main.humidity,
-        wind: weather.wind.speed,
-        icon: weather.weather[0].icon,
-        id: weather.weather[0].id,
+        temperature: weather.data.main.temp,
+        city: weather.data.name,
+        country: weather.data.sys.country,
+        description: weather.data.weather[0].description,
+        main: weather.data.weather[0].main,
+        humidity: weather.data.main.humidity,
+        wind: weather.data.wind.speed,
+        icon: weather.data.weather[0].icon,
+        id: weather.data.weather[0].id,
         error: "", 
-        forecast1: forecast.list[0].main.temp, 
-        forecast2: forecast.list[1].main.temp, 
-        forecast3: forecast.list[2].main.temp, 
+        forecast1: forecast.data.list[0].main.temp, 
+        forecast2: forecast.data.list[1].main.temp, 
+        forecast3: forecast.data.list[2].main.temp, 
         tomorrow: tomorrow,
         afterTomorrow: afterTomorrow,
         afterAfterTomorrow: afterAfterTomorrow,
+        tomorrowIcon: forecast.data.list[0].weather[0].id,
+        afterTomorrowIcon: forecast.data.list[1].weather[0].id,
+        afterAfterTomorrowIcon: forecast.data.list[2].weather[0].id,
 
 
       })
@@ -110,9 +116,21 @@ class App extends Component {
       }
       else if (this.state.main === "Clouds") {
         bgColorClass = 'clouds';
-    } else {
-        bgColorClass = 'else'
-    }
+      }
+      else if (this.state.main === "Mist") {
+        bgColorClass = 'mist';
+      }
+      else if (this.state.main === "Smoke") {
+        bgColorClass = 'smoke';
+      }
+      else if (this.state.main === "Dust") {
+        bgColorClass = 'dust'; 
+      }
+      else if (this.state.main === "Fog") {
+        bgColorClass = 'fog'; 
+      } else {
+          bgColorClass = 'else'
+      }
 
     return (
       <div className={"App "+ bgColorClass}>
@@ -136,6 +154,9 @@ class App extends Component {
           tomorrow={this.state.tomorrow}
           afterTomorrow={this.state.afterTomorrow}
           afterAfterTomorrow={this.state.afterAfterTomorrow}
+          tomorrowIcon={this.state.tomorrowIcon}
+          afterTomorrowIcon={this.state.afterTomorrowIcon}
+          afterAfterTomorrowIcon={this.state.afterAfterTomorrowIcon}
           />  
         
     </div>

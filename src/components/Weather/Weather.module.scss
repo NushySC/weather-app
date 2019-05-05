@@ -4,19 +4,22 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: left;
+    text-align: center;
     margin: 0;
+    width: 80%;
 }
 
+
 .outputTitle {
-    font-family: $title;
+    font-family: $mainTitle;
     font-weight: 700;
     text-align: center;
     font-size: 1.3em;
 }
 
+
 .outputCity {
-    font-family: $title;
+    font-family: $mainTitle;
     font-weight: 700;
     text-align: center;
     font-size: 2em;
@@ -41,13 +44,22 @@
 .outputDatas {
     display: flex;
     flex-direction: row;
+    align-items: center;
+    padding: 1em;
 }
 
+  
 .outputData {
     display: flex;
     flex-direction: column;
-    padding: 0.3em 0.9em;
     align-items: center;
+    width: 33%;
+    flex-grow: auto;
+    padding: 0 2em;
+
+    p {
+        font-size: 0.8em;
+    }
 }
 /* 
 .icon {
@@ -62,15 +74,23 @@
 .forecasts {
     display: flex;
     flex-direction: row;
+    align-items: center;
 }
 
+
 .forecast {
-    font-family: $text;
-    padding: 2em;
+    padding: 1em;
     font-weight: 700;
+    margin-top: 2em;
+    padding: 0 2em;
 }
 
 .nextTemp {
     font-size: 0.5;
     font-family: $text;
+
+    i {
+        font-size: 3em;
+    }
 }
+
