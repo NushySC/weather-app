@@ -1,0 +1,55 @@
+
+$sun: #ffd900;
+$rain: rgb(96, 189, 20);
+$drizzle: #06799F;
+$thunder: #233884;
+$snow: #707ba5;
+$clouds: #686b77;
+$haze: #842343;
+
+$title: 'Heebo', sans-serif;
+$text: 'Roboto', sans-serif;
+
+
+@mixin gradient($start-color, $end-color, $orientation) {
+  background: $start-color;
+  @if $orientation == 'vertical' {
+    background: -webkit-linear-gradient(top, $start-color, $end-color);
+    background: linear-gradient(to bottom, $start-color, $end-color);
+  } @else if $orientation == 'horizontal' {
+    background: -webkit-linear-gradient(left, $start-color, $end-color);
+    background: linear-gradient(to right, $start-color, $end-color);
+  } @else {
+    background: -webkit-radial-gradient(center, ellipse cover, $start-color, $end-color);
+    background: radial-gradient(ellipse at center, $start-color, $end-color);
+  }
+}
+
+.App {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  @include gradient($sun, $drizzle, vertical);
+  //background-color: $drizzle;
+  //background: linear-gradient(0deg, rgb(66, 61, 160) 0%, rgba(0,212,255,1) 100%);
+  color: white;
+  height: 100vh;
+
+  &.sun{ @include gradient($sun, #f57106, vertical); }
+  &.rain { @include gradient($rain, #147e11, vertical); }
+  &.drizzle { @include gradient($drizzle, #053eb9, vertical); }
+  &.thunder { @include gradient($thunder, #040b2e, vertical); }
+  &.snow { @include gradient($snow, #8906f5, vertical); }
+  &.clouds { @include gradient($clouds, #2e2a27, vertical); }
+  &.haze { @include gradient($haze, #310628, vertical); }
+
+}
+
+
+@media only screen and (max-width: 600px) {
+  .App {
+    font-size: calc(0.5em + 1vmin);;
+  }
+}

@@ -1,0 +1,19 @@
+@import '../../App.scss';
+
+.header {
+    font-family: $title;
+    width: 80%;
+    /* background-color: #eeeeee48;
+    border-radius: 3em;
+    padding: 1em; */
+}
+
+.title {
+    font-size: 4em;
+    margin: 0.2em;
+}
+
+.subtitle {
+    font-size: 1.3em;
+    margin: 0.3em;
+}

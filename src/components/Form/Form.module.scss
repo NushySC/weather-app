@@ -1,3 +1,5 @@
+@import '../../App.scss';
+
 form {
     display: flex;
     flex-direction: column;
@@ -7,10 +9,12 @@ form {
 button {
     margin: 1em;
     border-radius: 0.6em;
-    background-color: rgb(65, 81, 228);
+    background-color: #8c8c8f;
     padding: 0.8em 0.2em;
     width: 10em;
     color: white;
+    font-family: $text;
+    font-weight: 700;
     border-style: none;
     box-shadow: 0.3em 0.3em 0.6em #2927275b;
 }
@@ -19,23 +23,29 @@ input {
   border-style: none;
   border-bottom: 0.2em solid white;
   padding: 0.3em;
-  width: 30vw;
+  width: 40vw;
   color: white;
+  background-color: #f1eee700;
+  outline: none;
+  font-family: $text;
 }
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover, 
-input:-webkit-autofill:focus, 
-input:-webkit-autofill:active  {
-    -webkit-box-shadow: 0 0 0 30px #f1eee7 inset !important;
-    font-family: 'Raleway', serif;
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  border: 1px solid rgba(0, 128, 0, 0);
+  border-bottom: 0.2em solid #ffffff;
+  -webkit-text-fill-color: #ffffff;
+  -webkit-box-shadow: 0 0 0px 1000px rgba(0, 0, 0, 0) inset;
+  transition: background-color 500s ease-in-out 0s;
 }
 
-input, select, textarea {
-  background-color: #f1eee700;
-  outline: none;
-  font-family: 'Raleway', serif;
-}
 
 ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
   color:    white;

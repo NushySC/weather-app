@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import Styles from './App.module.css';
+import axios from 'axios'
+import './App.scss';
 
 import Form from './components/Form/Form'
 import Header from './components/Header/Header'
@@ -20,6 +21,8 @@ class App extends Component {
     wind: undefined,
     icon: undefined,
     error: undefined,
+    id: undefined,
+    //forecast:undefined,
   }
 
   getWeather = async (e) => {
@@ -27,8 +30,11 @@ class App extends Component {
     const city = e.target.elements.city.value;
     const api_call = await
       fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${API_KEY}`);
+      fetch(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&APPID=${API_KEY}`);
     const data = await api_call.json();
-    console.log(data)
+    //console.log(data);
+
+
     if (city) {
       this.setState({
         temperature: data.main.temp,
@@ -39,21 +45,46 @@ class App extends Component {
         humidity: data.main.humidity,
         wind: data.wind.speed,
         icon: data.weather[0].icon,
-        error: "",  
+        id: data.weather[0].id,
+        error: "", 
+        //forecast: data.list[0].main.temp, 
       })
-    }else {
+    } else {
       alert("Please, enter a city")
     }
   }
 
+
   render() {
+
+let bgColorClass = 'App'; 
+
+    if (this.state.main === "Rain") {
+      bgColorClass = 'rain';
+  }
+  else if (this.state.main === "Thunderstorm") {
+      bgColorClass = 'thunder';
+  }
+  else if (this.state.main === "Drizzle") {
+      bgColorClass = 'drizzle';
+  }
+  else if (this.state.main === "Snow") {
+      bgColorClass = 'snow';
+  }
+  else if (this.state.main === "Clear") {
+      bgColorClass = 'sun';
+  }
+  else if (this.state.main === "Clouds") {
+    bgColorClass = 'clouds';
+} else {
+    bgColorClass = 'else'
+}
+
   return (
-    <div className={Styles.App}>
-    <div className={Styles.firstScreen}>
+    <div className={"App "+ bgColorClass}>
       <Header />
       <Form
-        getWeather={this.getWeather} />
-    </div>
+        getWeather={this.getWeather}  />
     <Weather 
       temperature={this.state.temperature}
       city={this.state.city}
@@ -64,6 +95,8 @@ class App extends Component {
       wind={this.state.wind}
       error={this.state.error}
       icon={this.state.icon}
+      id={this.state.id}
+      forecast={this.state.forecast}
       />  
       
   </div>
