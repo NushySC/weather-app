@@ -4,8 +4,8 @@ $rain: rgb(96, 189, 20);
 $drizzle: rgb(6, 159, 159);
 $thunder: #1d1163;
 $snow: #838eb9;
-$clouds: #335e91;
-$haze: #921b43;
+$clouds: #2d6fc0;
+$haze: #d42240;
 $mist: #961484;
 $smoke: #4e4146;
 $dust: #f38e0b;
@@ -58,8 +58,25 @@ $text: 'Roboto', sans-serif;
 }
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (min-width: 800px) {
   .App {
     font-size: calc(0.4em + 1vmin);;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row;
   }
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+}
+
+.right {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
 }

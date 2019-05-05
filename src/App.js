@@ -128,40 +128,47 @@ class App extends Component {
       }
       else if (this.state.main === "Fog") {
         bgColorClass = 'fog'; 
-      } else {
-          bgColorClass = 'else'
+      }
+      else if (this.state.main === "Haze") {
+        bgColorClass = 'haze'; 
+      }  
+      else {
+          bgColorClass = 'white'
       }
 
     return (
       <div className={"App "+ bgColorClass}>
-        <Header />
-        <Form
-          getWeather={this.getWeather}  />
-        <Weather 
-          temperature={this.state.temperature}
-          city={this.state.city}
-          country={this.state.country}
-          description={this.state.description}
-          main={this.state.main}
-          humidity={this.state.humidity}
-          wind={this.state.wind}
-          error={this.state.error}
-          icon={this.state.icon}
-          id={this.state.id}
-          forecast1={this.state.forecast1}
-          forecast2={this.state.forecast2}
-          forecast3={this.state.forecast3}
-          tomorrow={this.state.tomorrow}
-          afterTomorrow={this.state.afterTomorrow}
-          afterAfterTomorrow={this.state.afterAfterTomorrow}
-          tomorrowIcon={this.state.tomorrowIcon}
-          afterTomorrowIcon={this.state.afterTomorrowIcon}
-          afterAfterTomorrowIcon={this.state.afterAfterTomorrowIcon}
-          />  
+        <div className="left">
+          <Header />
+          <Form
+            getWeather={this.getWeather}  />
+        </div>
+        <div className="right">
+          <Weather 
+            temperature={this.state.temperature}
+            city={this.state.city}
+            country={this.state.country}
+            description={this.state.description}
+            main={this.state.main}
+            humidity={this.state.humidity}
+            wind={this.state.wind}
+            error={this.state.error}
+            icon={this.state.icon}
+            id={this.state.id}
+            forecast1={this.state.forecast1}
+            forecast2={this.state.forecast2}
+            forecast3={this.state.forecast3}
+            tomorrow={this.state.tomorrow}
+            afterTomorrow={this.state.afterTomorrow}
+            afterAfterTomorrow={this.state.afterAfterTomorrow}
+            tomorrowIcon={this.state.tomorrowIcon}
+            afterTomorrowIcon={this.state.afterTomorrowIcon}
+            afterAfterTomorrowIcon={this.state.afterAfterTomorrowIcon}
+            />  
+        </div>
         
     </div>
     );
     }
 }
-
 export default App;
