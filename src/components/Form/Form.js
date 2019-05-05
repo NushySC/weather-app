@@ -6,7 +6,7 @@ const Form = (props) => (
                 <input className={Styles.inputBox}type="text" name="city" placeholder="Enter your city" />
                 <br />
                 <button> Get the forecast!</button>
-      </form>
+            </form>
         )
 
 export default Form 

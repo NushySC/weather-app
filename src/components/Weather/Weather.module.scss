@@ -58,3 +58,19 @@
     font-size: 12em;
     text-align: center;
 }
+    
+.forecasts {
+    display: flex;
+    flex-direction: row;
+}
+
+.forecast {
+    font-family: $text;
+    padding: 2em;
+    font-weight: 700;
+}
+
+.nextTemp {
+    font-size: 0.5;
+    font-family: $text;
+}
