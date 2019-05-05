@@ -17,8 +17,10 @@ const Weather = props => (
                 <div className={Styles.outputDatas}>
                     <div className={Styles.outputData}>{props.temperature && <div className={Styles.outputTitle}>Temperature<p className={Styles.outputResult}>{props.temperature}°C</p> </div>}</div>  
 
-                    <div className={Styles.outputData}>{props.humidity && <div className={Styles.outputTitle}>Humidity<p className={Styles.outputResult}>{props.humidity}%</p></div>}</div>
                     <div className={Styles.outputData}>{props.wind && <div className={Styles.outputTitle}>Wind<p className={Styles.outputResult}>{props.wind} m/s</p></div>}</div>
+
+                    <div className={Styles.outputData}>{props.humidity && <div className={Styles.outputTitle}>Humidity<p className={Styles.outputResult}>{props.humidity}%</p></div>}</div>
+                    
                 </div>
 
                 <div className={Styles.forecasts}>

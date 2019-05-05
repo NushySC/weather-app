@@ -6,7 +6,7 @@
     align-items: center;
     text-align: center;
     margin: 0;
-    width: 80%;
+    width: 100%;
 }
 
 
@@ -14,7 +14,8 @@
     font-family: $mainTitle;
     font-weight: 700;
     text-align: center;
-    font-size: 1.3em;
+    font-size: fontSizeRes;
+    margin: 0 auto;
 }
 
 
@@ -29,9 +30,9 @@
 .outputResult {
     font-family: $text;
     text-align: center;
-    font-size: 0.9em;
     margin: 0.2em;
     color: #ffffff;
+    font-size: fontSizeRes;
 }
 
 .outputDesc {
@@ -39,13 +40,18 @@
     text-align: center;
     font-size: 1.3em;
     margin-bottom: 2em;
+    font-size: fontSizeRes;
 }
 
 .outputDatas {
     display: flex;
     flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    padding: 1em;
+    text-align: center;
+    padding: 0 1em;
+    width: 100%;
+
 }
 
   
@@ -53,9 +59,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 33%;
-    flex-grow: auto;
-    padding: 0 2em;
+    font-size: fontSizeRes;
+    padding: 0 0.4em;
 
     p {
         font-size: 0.8em;
@@ -75,6 +80,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
+    font-size: fontSizeRes;
 }
 
 
@@ -88,6 +94,7 @@
 .nextTemp {
     font-size: 0.5;
     font-family: $text;
+    font-size: fontSizeRes;
 
     i {
         font-size: 3em;
