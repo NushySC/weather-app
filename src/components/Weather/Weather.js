@@ -1,7 +1,7 @@
 import React from 'react'
 import Styles from "./Weather.module.scss"
 
-let options = { weekday: 'long', month: 'long', day: 'numeric' };
+let options = { weekday: 'short', month: 'short', day: 'numeric' };
 
 
 const Weather = props => (

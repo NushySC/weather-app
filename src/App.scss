@@ -1,11 +1,15 @@
 
 $sun: #ffd900;
 $rain: rgb(96, 189, 20);
-$drizzle: #06799F;
-$thunder: #233884;
-$snow: #707ba5;
-$clouds: #686b77;
-$haze: #842343;
+$drizzle: rgb(6, 159, 159);
+$thunder: #1d1163;
+$snow: #838eb9;
+$clouds: #335e91;
+$haze: #921b43;
+$mist: #961484;
+$smoke: #4e4146;
+$dust: #f38e0b;
+$fog: #236d84;
 
 $mainTitle: 'Arvo', serif;
 $title: 'Heebo', sans-serif;
@@ -33,7 +37,7 @@ $text: 'Roboto', sans-serif;
   justify-content: space-around;
   align-items: center;
   padding: 3em;
-  @include gradient($sun, $drizzle, vertical);
+  @include gradient($sun, $mist, vertical);
   //background-color: $drizzle;
   //background: linear-gradient(0deg, rgb(66, 61, 160) 0%, rgba(0,212,255,1) 100%);
   color: white;
@@ -46,6 +50,10 @@ $text: 'Roboto', sans-serif;
   &.snow { @include gradient($snow, #8906f5, vertical); }
   &.clouds { @include gradient($clouds, #2e2a27, vertical); }
   &.haze { @include gradient($haze, #310628, vertical); }
+  &.mist { @include gradient($mist, #1a0631, vertical); }
+  &.smoke { @include gradient($smoke, #251a23, vertical); }
+  &.dust { @include gradient($dust, #611c07, vertical); }
+  &.fog { @include gradient($fog, #090631, vertical); }
 
 }
 
