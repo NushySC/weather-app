@@ -40,8 +40,8 @@ class App extends Component {
     //const fetchText = url => fetch(url).then(r => r.json()); 
  
     const [weather, forecast] = await Promise.all([
-      axios.get(`http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${API_KEY}`),
-      axios.get(`http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&APPID=${API_KEY}`)
+      axios.get(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&APPID=${API_KEY}`),
+      axios.get(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&APPID=${API_KEY}`)
       
     ]);
  
