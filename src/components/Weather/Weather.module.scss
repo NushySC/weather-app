@@ -14,10 +14,15 @@
     font-family: $mainTitle;
     font-weight: 700;
     text-align: center;
-    font-size: fontSizeRes;
+    font-size: 1em;
     margin: 0 auto;
 }
 
+@media only screen and (max-width: 800px) {
+    .outputTitle {
+        font-size: 0.9em;
+    }
+  }
 
 .outputCity {
     font-family: $mainTitle;
@@ -32,15 +37,13 @@
     text-align: center;
     margin: 0.2em;
     color: #ffffff;
-    font-size: fontSizeRes;
 }
 
 .outputDesc {
     font-family: $text;
     text-align: center;
-    font-size: 1.3em;
+    font-size: 1em;
     margin-bottom: 2em;
-    font-size: fontSizeRes;
 }
 
 .outputDatas {
@@ -49,7 +52,6 @@
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    padding: 0 1em;
     width: 100%;
 
 }
@@ -59,12 +61,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: fontSizeRes;
+    font-size: 0.9em;
     padding: 0 0.4em;
-
-    p {
-        font-size: 0.8em;
-    }
+    max-width: 33%;
 }
 /* 
 .icon {
@@ -74,6 +73,7 @@
 .fontIcon {
     font-size: 12em;
     text-align: center;
+    height: 25vh;
 }
     
 .forecasts {
@@ -81,23 +81,69 @@
     flex-direction: row;
     align-items: center;
     font-size: fontSizeRes;
+    background-color: rgba(0, 0, 0, 0.185);
+    border-radius: 2em;
+    margin-top: 1em;
+    
+    i {
+        font-size: 1.5em;
+    }
 }
 
 
 .forecast {
-    padding: 1em;
     font-weight: 700;
-    margin-top: 2em;
-    padding: 0 2em;
+    margin: 1em;
+    max-width: 33%;
 }
 
-.nextTemp {
-    font-size: 0.5;
-    font-family: $text;
-    font-size: fontSizeRes;
-
-    i {
-        font-size: 3em;
-    }
+.future {
+    font-size: 0.7em;
+    font-family: $mainTitle;
+    margin-bottom: 0.6em;
 }
 
+/////
+
+// $width: 2em;
+// $padding: 0.3em;
+// $height: $width / 2 + $padding;
+
+// //toggle code begins!
+// .switchWrap {
+//     margin: 2em;
+//   cursor: pointer;
+//   background: #15273b;
+//   padding: $padding;
+//   width: $width;
+//   height: $height;
+//   border-radius: $height / 2;
+//   input {
+//     position: absolute;
+//     opacity: 0;
+//     width: 0;
+//     height: 0;
+//   }
+// }
+// .switch {
+//   height: 100%;
+//   display: grid;
+//   grid-template-columns: 0fr 1fr 1fr;
+//   transition: .2s;
+//   //ICYMI, pseudo elements are treated as grid items
+//   &::after {
+//     content: '';
+//     border-radius: 50%;
+//     background: #ccc;
+//     grid-column: 2;
+//     transition: background .2s;
+//   }
+// }
+// input:checked {
+//   + .switch {
+//     grid-template-columns: 1fr 1fr 0fr; 
+//     &::after {
+//       background-color: #52cf71;
+//     }
+//   }
+// }

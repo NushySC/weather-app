@@ -3,15 +3,20 @@ import Styles from "./Weather.module.scss"
 
 let options = { weekday: 'short', month: 'short', day: 'numeric' };
 
-
 const Weather = props => (
 
             <div className={Styles.outputs}>
+            
 
-            <div className={Styles.fontIcon}><i className={`owf owf-${props.id}`}></i></div>
+            {props.id&& props.country && <div className={Styles.fontIcon}><i className={`owf owf-${props.id}`}></i></div>}
 
                 {props.city && props.country && <h2 className={Styles.outputCity}>{props.city}, {props.country}</h2>}
                 {props.main && props.description && <div className={Styles.outputDesc}>{props.main}/{props.description}</div>}
+                
+                {/* <label className={Styles.switchWrap}>
+  <input type="checkbox" />
+  <div className={Styles.switch}></div>
+</label> */}
 
 
                 <div className={Styles.outputDatas}>
@@ -23,15 +28,15 @@ const Weather = props => (
                     
                 </div>
 
-                <div className={Styles.forecasts}>
+                {props.forecast1 && <div className={Styles.forecasts}>
                 
-                    <div className={Styles.forecast}>{props.forecast1 && <div className={Styles.nextTemp}><p><i className={`owf owf-${props.tomorrowIcon}`}></i></p><p>{props.tomorrow.toLocaleString('en-US', options)}</p><p>{props.forecast1} °C</p></div>}</div>
+                    <div className={Styles.forecast}>{props.forecast1 && <div className={Styles.nextTemp}><p><i className={`owf owf-${props.tomorrowIcon}`}></i></p><p className={Styles.future}>{props.tomorrow.toLocaleString('en-US', options)}</p><p className={Styles.future}>{props.forecast1} °C</p></div>}</div>
 
-                    <div className={Styles.forecast}>{props.forecast2 && <div className={Styles.nextTemp}><i className={`owf owf-${props.afterTomorrowIcon}`}></i><p>{props.afterTomorrow.toLocaleString('en-US', options)}</p><p>{props.forecast2} °C</p></div>}</div>
+                    <div className={Styles.forecast}>{props.forecast2 && <div className={Styles.nextTemp}><i className={`owf owf-${props.afterTomorrowIcon}`}></i><p className={Styles.future}>{props.afterTomorrow.toLocaleString('en-US', options)}</p><p className={Styles.future}>{props.forecast2} °C</p></div>}</div>
 
-                    <div className={Styles.forecast}>{props.forecast3 && <div className={Styles.nextTemp}><i className={`owf owf-${props.afterAfterTomorrowIcon}`}></i><p>{props.afterAfterTomorrow.toLocaleString('en-US', options)}</p><p>{props.forecast3} °C</p></div>}</div>
+                    <div className={Styles.forecast}>{props.forecast3 && <div className={Styles.nextTemp}><i className={`owf owf-${props.afterAfterTomorrowIcon}`}></i><p className={Styles.future}>{props.afterAfterTomorrow.toLocaleString('en-US', options)}</p><p className={Styles.future}>{props.forecast3} °C</p></div>}</div>
                 
-                </div>
+                </div>}
                 
                 
             </div>

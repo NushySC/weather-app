@@ -44,9 +44,11 @@ class App extends Component {
       axios.get(`https://cors-anywhere.herokuapp.com/http://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&APPID=${API_KEY}`)
       
     ]);
+
+
  
-    console.log(weather)
-    console.log(forecast)
+    //console.log(weather)
+    //console.log(forecast)
 
 
     let today = new Date()

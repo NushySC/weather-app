@@ -15,7 +15,7 @@ $mainTitle: 'Arvo', serif;
 $title: 'Heebo', sans-serif;
 $text: 'Roboto', sans-serif;
 
-$fontSizeRes: calc(2.4em + 1vmin);
+$fontSizeRes: calc(1.5em + 1vw);
 
 @mixin gradient($start-color, $end-color, $orientation) {
   background: $start-color;
@@ -38,7 +38,7 @@ $fontSizeRes: calc(2.4em + 1vmin);
   justify-content: center;
   align-items: center;
   margin: 0 auto;
-  padding: 3em;
+  padding: 1em;
   @include gradient($sun, $mist, vertical);
   //background-color: $drizzle;
   //background: linear-gradient(0deg, rgb(66, 61, 160) 0%, rgba(0,212,255,1) 100%);
@@ -46,15 +46,15 @@ $fontSizeRes: calc(2.4em + 1vmin);
   min-height: 100vh;
 
   &.sun{ @include gradient($sun, #f57106, vertical); }
-  &.rain { @include gradient($rain, #147e11, vertical); }
+  &.rain { @include gradient($rain, #0f440e, vertical); }
   &.drizzle { @include gradient($drizzle, #053eb9, vertical); }
-  &.thunder { @include gradient($thunder, #040b2e, vertical); }
+  &.thunder { @include gradient($thunder, #010411, vertical); }
   &.snow { @include gradient($snow, #8906f5, vertical); }
-  &.clouds { @include gradient($clouds, #2e2a27, vertical); }
-  &.haze { @include gradient($haze, #310628, vertical); }
-  &.mist { @include gradient($mist, #1a0631, vertical); }
+  &.clouds { @include gradient($clouds, #221f1d, vertical); }
+  &.haze { @include gradient($haze, #1f0419, vertical); }
+  &.mist { @include gradient($mist, #110420, vertical); }
   &.smoke { @include gradient($smoke, #251a23, vertical); }
-  &.dust { @include gradient($dust, #611c07, vertical); }
+  &.dust { @include gradient($dust, #4d1606, vertical); }
   &.fog { @include gradient($fog, #090631, vertical); }
 
 }
@@ -65,6 +65,7 @@ $fontSizeRes: calc(2.4em + 1vmin);
     margin: 0 auto;
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
   }
 }
 

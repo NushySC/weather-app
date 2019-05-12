@@ -8,20 +8,21 @@
 }
 
 .title {
-    font-size: $fontSizeRes;
-    margin: 0.2em;
+    font-size: 2em;
     font-family: $mainTitle;
+    text-align: center;
+    margin: 0 auto;
 }
 
 .subtitle {
-    font-size: 1.3em;
-    margin: 0.3em;
+    font-size: 1.2em;
+    margin: 1em auto;
     font-family: $mainTitle;
 }
 
 .logo {
-    font-size: 12em;
-    margin: 0.2em auto;
+    font-size: 6em;
+    margin: 0.3em auto;
     position: relative;
     left: 0.2em;
 }
