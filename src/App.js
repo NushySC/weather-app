@@ -22,6 +22,7 @@ class App extends Component {
     icon: undefined,
     error: undefined,
     id: undefined,
+    unit: undefined,
     forecast1:undefined,
     forecast2:undefined,
     forecast3:undefined,
@@ -69,7 +70,7 @@ class App extends Component {
 
     if (city) {
       this.setState({
-        temperature: weather.data.main.temp,
+        temperature: parseInt(weather.data.main.temp),
         city: weather.data.name,
         country: weather.data.sys.country,
         description: weather.data.weather[0].description,
@@ -78,10 +79,11 @@ class App extends Component {
         wind: weather.data.wind.speed,
         icon: weather.data.weather[0].icon,
         id: weather.data.weather[0].id,
+        unit: 'C',
         error: "", 
-        forecast1: forecast.data.list[0].main.temp, 
-        forecast2: forecast.data.list[1].main.temp, 
-        forecast3: forecast.data.list[2].main.temp, 
+        forecast1: parseInt(forecast.data.list[0].main.temp), 
+        forecast2: parseInt(forecast.data.list[1].main.temp), 
+        forecast3: parseInt(forecast.data.list[2].main.temp), 
         tomorrow: tomorrow,
         afterTomorrow: afterTomorrow,
         afterAfterTomorrow: afterAfterTomorrow,
@@ -157,6 +159,7 @@ class App extends Component {
             error={this.state.error}
             icon={this.state.icon}
             id={this.state.id}
+            unit={this.state.unit}
             forecast1={this.state.forecast1}
             forecast2={this.state.forecast2}
             forecast3={this.state.forecast3}

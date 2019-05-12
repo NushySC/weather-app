@@ -15,8 +15,6 @@ $mainTitle: 'Arvo', serif;
 $title: 'Heebo', sans-serif;
 $text: 'Roboto', sans-serif;
 
-$fontSizeRes: calc(1.5em + 1vw);
-
 @mixin gradient($start-color, $end-color, $orientation) {
   background: $start-color;
   @if $orientation == 'vertical' {

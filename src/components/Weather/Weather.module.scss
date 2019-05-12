@@ -43,7 +43,6 @@
     font-family: $text;
     text-align: center;
     font-size: 1em;
-    margin-bottom: 2em;
 }
 
 .outputDatas {
@@ -53,7 +52,6 @@
     align-items: center;
     text-align: center;
     width: 100%;
-
 }
 
   
@@ -80,7 +78,6 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    font-size: fontSizeRes;
     background-color: rgba(0, 0, 0, 0.185);
     border-radius: 2em;
     margin-top: 1em;
@@ -103,47 +100,3 @@
     margin-bottom: 0.6em;
 }
 
-/////
-
-// $width: 2em;
-// $padding: 0.3em;
-// $height: $width / 2 + $padding;
-
-// //toggle code begins!
-// .switchWrap {
-//     margin: 2em;
-//   cursor: pointer;
-//   background: #15273b;
-//   padding: $padding;
-//   width: $width;
-//   height: $height;
-//   border-radius: $height / 2;
-//   input {
-//     position: absolute;
-//     opacity: 0;
-//     width: 0;
-//     height: 0;
-//   }
-// }
-// .switch {
-//   height: 100%;
-//   display: grid;
-//   grid-template-columns: 0fr 1fr 1fr;
-//   transition: .2s;
-//   //ICYMI, pseudo elements are treated as grid items
-//   &::after {
-//     content: '';
-//     border-radius: 50%;
-//     background: #ccc;
-//     grid-column: 2;
-//     transition: background .2s;
-//   }
-// }
-// input:checked {
-//   + .switch {
-//     grid-template-columns: 1fr 1fr 0fr; 
-//     &::after {
-//       background-color: #52cf71;
-//     }
-//   }
-// }

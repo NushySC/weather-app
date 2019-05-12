@@ -1,11 +1,18 @@
 import React from 'react'
 import Styles from "./Weather.module.scss"
 
+import Toggle from '../Toggle/Toggle'
+
 let options = { weekday: 'short', month: 'short', day: 'numeric' };
 
-const Weather = props => (
+const Weather = (props) => {
 
-            <div className={Styles.outputs}>
+    let tempC = props.temperature
+    let tempF =  props.temperature * 9 / 5 + 32
+
+    return (
+
+        <div className={Styles.outputs}>
             
 
             {props.id&& props.country && <div className={Styles.fontIcon}><i className={`owf owf-${props.id}`}></i></div>}
@@ -13,10 +20,9 @@ const Weather = props => (
                 {props.city && props.country && <h2 className={Styles.outputCity}>{props.city}, {props.country}</h2>}
                 {props.main && props.description && <div className={Styles.outputDesc}>{props.main}/{props.description}</div>}
                 
-                {/* <label className={Styles.switchWrap}>
-  <input type="checkbox" />
-  <div className={Styles.switch}></div>
-</label> */}
+                {props.id&& props.country && 
+                
+                <Toggle />}
 
 
                 <div className={Styles.outputDatas}>
@@ -40,5 +46,8 @@ const Weather = props => (
                 
                 
             </div>
-)
+
+    )
+}
+    
 export default Weather
