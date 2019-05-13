@@ -1,5 +1,6 @@
 import React from 'react'
 import Styles from "./Weather.module.scss"
+import Toggle from '../Toggle/Toggle'
 
 let options = { weekday: 'short', month: 'short', day: 'numeric' };
 
@@ -17,6 +18,12 @@ const Weather = props => (
   <input type="checkbox" />
   <div className={Styles.switch}></div>
 </label> */}
+
+{props.id&& props.country && 
+    <>
+        <p className={Styles.toogleDegrees}>C/F</p>
+                    <Toggle />
+    </>}
 
 
                 <div className={Styles.outputDatas}>
