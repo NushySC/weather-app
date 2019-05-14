@@ -18,12 +18,6 @@
     margin: 0 auto;
 }
 
-@media only screen and (max-width: 800px) {
-    .outputTitle {
-        font-size: 0.9em;
-    }
-  }
-
 .outputCity {
     font-family: $mainTitle;
     font-weight: 700;
@@ -43,6 +37,7 @@
     font-family: $text;
     text-align: center;
     font-size: 1em;
+    margin-bottom: 1.5em;
 }
 
 .outputDatas {
@@ -59,7 +54,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-size: 0.9em;
+    font-size: 1em;
     padding: 0 0.4em;
     max-width: 33%;
 }
@@ -78,7 +73,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: rgba(0, 0, 0, 0.185);
+    background-color: #3838385d;
     border-radius: 2em;
     margin-top: 1em;
     
@@ -86,8 +81,6 @@
         font-size: 1.5em;
     }
 }
-
-
 .forecast {
     font-weight: 700;
     margin: 1em;
@@ -95,12 +88,19 @@
 }
 
 .future {
-    font-size: 0.7em;
+    font-size: 0.9em;
     font-family: $mainTitle;
-    margin-bottom: 0.6em;
+    margin-bottom: 0.4em;
 }
+
 
 .toogleDegrees {
     font-size: 1em;
     font-family: $mainTitle;
 }
+
+@media only screen and (max-width: 400px) {
+    .outputTitle, .future {
+        font-size: 0.8em;
+    }
+  }
