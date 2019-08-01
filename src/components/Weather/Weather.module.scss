@@ -14,7 +14,7 @@
     font-family: $mainTitle;
     font-weight: 700;
     text-align: center;
-    font-size: 1em;
+    font-size: .8em;
     margin: 0 auto;
 }
 
@@ -22,7 +22,7 @@
     font-family: $mainTitle;
     font-weight: 700;
     text-align: center;
-    font-size: 2em;
+    font-size: 1.5em;
     margin: 0.2em;
 }
 
@@ -67,15 +67,16 @@
     font-size: 12em;
     text-align: center;
     height: 25vh;
+    margin-bottom: 2rem;
 }
     
 .forecasts {
     display: flex;
     flex-direction: row;
     align-items: center;
-    background-color: #3838385d;
-    border-radius: 2em;
-    margin-top: 1em;
+    background-color: #38383846;
+    border-radius: 1em;
+    margin-top: 1.5em;
     
     i {
         font-size: 1.5em;
@@ -83,12 +84,12 @@
 }
 .forecast {
     font-weight: 700;
-    margin: 1em;
+    margin: .9em;
     max-width: 33%;
 }
 
 .future {
-    font-size: 0.9em;
+    font-size: 0.6em;
     font-family: $mainTitle;
     margin-bottom: 0.4em;
 }
@@ -101,6 +102,6 @@
 
 @media only screen and (max-width: 400px) {
     .outputTitle, .future {
-        font-size: 0.8em;
+        font-size: 0.7em;
     }
   }

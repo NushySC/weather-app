@@ -141,7 +141,9 @@ class App extends Component {
     return (
       <div className={"App "+ bgColorClass}>
         <div className="left">
-          <Header />
+          {!this.state.city && (
+				<Header />			
+			)}
           <Form
             getWeather={this.getWeather}  />
         </div>
